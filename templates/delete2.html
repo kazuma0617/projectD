@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block header %}
+<div class="alert alert-primary" role="alert">
+    <h3>delete2 page</h3>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <form action="" method="POST">{% csrf_token %}
+        <input type="submit" value="delete">
+    </form>
+</div>
+
+{% endblock %}

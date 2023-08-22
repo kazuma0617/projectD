@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block header %}
+<div class="alert alert-primary" role="alert">
+    <h3>list page</h3>
+    <p>{{user.username}}のアカウントでログインしています。</p>
+</div>
+{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<div class="container">
+    {% for item in object_list %}
+    <div class="alert alert-success" role="alert">
+        <p>曲名：{{item.title}}</p>
+        <a href="{% url 'delete' item.pk %}" class="btn btn-danger" role="button" aria-disabled="true">削除</a>
+        <a href="{% url 'detail' item.pk %}" class="btn btn-info" role="button" aria-disabled="true">詳細</a>
+        <a href="{% url 'graphfunc' item.pk %}" class="btn btn-warning" role="button" aria-disabled="true">グラフ</a>
+    </div>
+    {% endfor %}
+    <a href="{% url 'create' %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">曲の追加</a>
+    <a href="{% url 'createfunc' %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">点数の追加</a>
+    <a href="{% url 'logout' %}" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">logout</a>
+</div>
+{% else %}
+please login
+{% endif %}
+
+{% endblock %}

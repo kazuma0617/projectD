@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block header %}
+<div class="alert alert-primary" role="alert">
+    <h3>start page</h3>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <p>ようこそ！このサイトはDjangoで作られています。<br>
+    サインアップ、ログインをしよう！</p>
+    <div class="alert alert-secondary" role="alert">
+        <a href="{%url 'signup'%}" class="btn btn-primary" role="button" aria-disabled="true">signup</a>
+        <a href="{%url 'login'%}" class="btn btn-secondary" role="button" aria-disabled="true">login</a>
+    </div>
+</div>
+{% endblock %}

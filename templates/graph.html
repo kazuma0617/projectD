@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="alert alert-primary" role="alert">
+    <h3>graph page</h3>
+</div>
+{% endblock %}
+
+{% block content %}
+<img src="data:image/png;base64,{{ image_base64 }}" alt="Graph">
+{% endblock %}

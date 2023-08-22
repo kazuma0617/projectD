@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block header %}
+<div class="alert alert-primary" role="alert">
+    <h3>点数の追加</h3>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    <p><a href="{% url 'list' %}" class="btn btn-secondary mt-5" tabindex="-1" role="button" aria-disabled="true">戻る</a></p>
+</div>
+
+{% endblock %}
